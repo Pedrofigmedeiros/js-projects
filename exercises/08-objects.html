@@ -9,7 +9,7 @@
   </head>
   <body>
     <script>
-      const product = {
+      /*const product = {
         name: "socks",
         price: 1090,
       };
@@ -25,7 +25,94 @@
       console.log(product);
 
       delete product.newPropriety;
-      console.log(product);
+      console.log(product);*/
+
+      /*const product2 = {
+        name: "shirt",
+        "delivery-time": "1 day", // used in specific ocasions like when we have the '-' because it is recognized as a multiplication signal when without the ''
+        rating: {
+          stars: 4.5,
+          count: 87,
+        },
+
+        fun: function function1() {
+          // a function inside an object is called a Method. 'console.log()' and 'Math.random()' are examples of methods
+          console.log("function inside object");
+        },
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2["name"]);
+
+      console.log(product2.rating.count);
+      product2.fun();
+
+      // JSON Buitl-in object:
+      // It is used when we need to exchange informatios bretween two computers that can possibly be in different programming languages.
+      // It doesn't support functions
+
+      console.log(JSON.stringify(product2)); // converts from JS object to JSON object
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString)); // converts from JSON object to JS object
+
+      // localStorage:
+      // Used to save values more permanently (if we refresh the pages, the information won't be lost)*/
+
+      console.log('hello'. lenght);
+      console.log('hello' .toUpperCase());
+
+      const object1 = {
+        message: 'hello'
+      };
+
+      const object2 = object1;
+
+      object1.message = 'good job';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'good job'
+      };
+
+      console.log(object3 === object1);
+      console.log(object1 === object2);
+
+      let a = 3;
+      let b = 3;
+      console.log(a == b);
+
+      const object4 = {
+        message: 'good job',
+        price: 799
+      };
+
+      //const message = object4.message;
+      console.log(object4.message); // original way
+      console.log(object4.price);
+
+      const {message, price} = object4; // shortcut
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        // message: message
+        message,
+        // method: function function1() {
+        //  console.log('method');
+        //}
+
+        method() {
+          console.log('method');
+        }
+      };
+      
+      console.log(object5);
+      object5.method();
     </script>
   </body>
 </html>
+
+
