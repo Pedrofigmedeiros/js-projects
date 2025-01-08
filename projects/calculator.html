@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      updateCalculation('1');
+      "
+    >
+      1
+    </button>
+
+    <button
+      onclick="
+      updateCalculation('2');
+    "
+    >
+      2
+    </button>
+    <button
+      onclick="
+    updateCalculation('3');
+    "
+    >
+      3
+    </button>
+    <button
+      onclick="
+    updateCalculation(' + ');
+    "
+    >
+      +
+    </button>
+    <button
+      onclick="
+      eval(calculation);
+      calculation = eval(calculation);
+      console.log(`= ${calculation}`);
+    "
+    >
+      =
+    </button>
+    <script>
+      let calculation = "";
+
+      function updateCalculation(number) {
+        calculation += number;
+        console.log(calculation);
+      }
+    </script>
+  </body>
+</html>

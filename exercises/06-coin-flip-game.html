@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin flip game</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      const randomNumber = Math.random();
+      /*if (randomNumber >= 0 && randomNumber < 0.5) {
+        side = 'heads';
+      } else if (randomNumber >= 0.5 && randomNumber < 1) {
+        side = 'tails'
+      }*/
+      const side = randomNumber < 0.5 ? 'heads' : 'tails'
+      console.log(side);
+      "
+    >
+      Flip the coin
+    </button>
+  </body>
+</html>
