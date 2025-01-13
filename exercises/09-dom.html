@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>DOM</title> <!-- Document Object Model - The document object represents / models the webpage -->
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      console.log(document.querySelector('button')); // with document.querySelector() we can get anything we want from the webpage
+      console.log(document.querySelector('button').innerHTML); // gets the content inside the html (what is between the tags)
+      
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+
+
+      // console.log(document.title);
+      // document.title = 'Changed';
+
+      // console.log(document.body); // The html element is converted in a JS object
+      // console.log(typeof document.body);
+
+      // console.log(document.body.innerHTML);
+      // document.body.innerHTML = '<button>Good Job!</button>';
+
+
+      // document.body.innerHTML = 'hello'; // innerHTML is linked together to the web page
+      // document.title = 'Good Job';
+    </script>
+  </body>
+</html>
+
+

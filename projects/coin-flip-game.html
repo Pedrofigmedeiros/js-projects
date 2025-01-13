@@ -2,21 +2,54 @@
 <html>
   <head>
     <title>Coin flip game</title>
+    <!--
+    - User chooses the side of the coin when pressing the button
+    - Computer generates a random side of the coin
+    - Compare the results
+    - Create a score
+    - Display the result in a popup
+    -->
   </head>
   <body>
-    <button
-      onclick="
-      const randomNumber = Math.random();
-      /*if (randomNumber >= 0 && randomNumber < 0.5) {
-        side = 'heads';
-      } else if (randomNumber >= 0.5 && randomNumber < 1) {
-        side = 'tails'
-      }*/
-      const side = randomNumber < 0.5 ? 'heads' : 'tails'
-      console.log(side);
-      "
-    >
-      Flip the coin
-    </button>
+    <button onclick="pickingSide('heads');">Heads</button>
+    <button onclick="pickingSide('tails');">Tails</button>
+    
+    <script>
+      const score = JSON.parse(localStorage.getItem('score'));
+     
+      let sideFlipped = '';
+
+      function flipTheCoin() {
+        const randomNumber = Math.random();
+        if (randomNumber >= 0 && randomNumber < 0.5) {
+          sideFlipped = 'heads';
+        } else if (randomNumber >= 0.5 && randomNumber < 1) {
+          sideFlipped = 'tails'
+        }
+        console.log(sideFlipped);
+      };
+
+      function pickingSide(sideChoosen) {
+        flipTheCoin();
+        if (sideFlipped === sideChoosen) {
+          result = 'You won';
+        } else {
+          result = 'You lost';
+        }
+
+        if (result === 'You won') {
+          score.wins += 1;
+        } else {
+          score.losses += 1;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        alert(`You chose ${sideChoosen} The side of the coin was ${sideFlipped}. ${result}.
+        Wins: ${score.wins}. Losses: ${score.losses}.`);
+
+        
+      };
+    </script>
   </body>
 </html>
