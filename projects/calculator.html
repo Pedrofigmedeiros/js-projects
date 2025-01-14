@@ -8,20 +8,27 @@
     <button onclick="updateCalculation('2');">2</button>
     <button onclick="updateCalculation('3');">3</button>
     <button onclick="updateCalculation(' + ');">+</button>
-    
-    <button
-      onclick="
-      eval(calculation);
-      calculation = eval(calculation);
-      console.log(`= ${calculation}`);
-    ">=</button>
+    <button onclick="calculateEquation();">=</button>
+
+    <p class="js-result"></p>
     
     <script>
       let calculation = "";
 
       function updateCalculation(number) {
         calculation += number;
-        console.log(calculation);
+        displayCalculation();
+      }
+
+      function calculateEquation(){
+        eval(calculation);
+        calculation = eval(calculation);
+        displayCalculation();
+      }
+
+      function displayCalculation() {
+        document.querySelector('.js-result')
+          .innerHTML = calculation;
       }
     </script>
   </body>
