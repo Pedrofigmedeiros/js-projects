@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="./calculator.js"></script>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Calculator</h1>
+      <p class="js-result">0</p>
+      <div class="calculator-buttons">
+        <button onclick="updateCalculation('7');" class="gray-button">7</button>
+        <button onclick="updateCalculation('8');" class="gray-button">8</button>
+        <button onclick="updateCalculation('9');" class="gray-button">9</button>
+        <button onclick="updateCalculation(' / ');" class="orange-button">/</button>
+    
+        <button onclick="updateCalculation('4');" class="gray-button">4</button>
+        <button onclick="updateCalculation('5');" class="gray-button">5</button>
+        <button onclick="updateCalculation('6');" class="gray-button">6</button>
+        <button onclick="updateCalculation(' * ');" class="orange-button">*</button>
+    
+        <button onclick="updateCalculation('1');" class="gray-button">1</button>
+        <button onclick="updateCalculation('2');" class="gray-button">2</button>
+        <button onclick="updateCalculation('3');" class="gray-button">3</button>
+        <button onclick="updateCalculation(' - ');" class="orange-button">-</button>
+    
+        <button onclick="resetCalculation();" class="gray-button">AC</button>
+        <button onclick="updateCalculation('0');" class="gray-button">0</button>
+        <button onclick="updateCalculation(' . ');" class="gray-button">.</button>
+        <button onclick="updateCalculation(' + ');" class="orange-button">+</button>
+        
+        <button onclick="calculateEquation();" class="orange-button equal-button">=</button>
+      </div>
+    </div>
+  </body>
+</html>

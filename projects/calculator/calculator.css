@@ -1,0 +1,54 @@
+body{
+  color: white;
+}
+
+h1{
+  font-size: 40px;
+}
+
+p{
+  font-size: 24px;
+  display: inline-block;
+}
+
+.calculator{
+  background-color: black;
+  padding: 30px 40px 30px 30px;
+  display: inline-block;
+}
+
+.calculator-buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 66px);
+  grid-template-rows: repeat(5, 66px);
+}
+
+button{
+  color: white;
+  font-size: 26px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.equal-button{
+  margin-left: 197px;
+}
+
+.gray-button{
+  background-color: rgb(67, 66, 66);
+}
+
+.gray-button:hover{
+  background-color: rgb(93, 90, 90)
+}
+
+.orange-button{
+  background-color: orange;
+}
+
+.orange-button:hover{
+  background-color: rgb(242, 178, 59);
+}
