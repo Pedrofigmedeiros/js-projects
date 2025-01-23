@@ -2,13 +2,37 @@
 <html>
   <head>
      <title>DOM Project</title>
+     <style>
+      body{
+        font-family: Arial;
+      }
+
+      .subscribe-button{
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+     </style>
   </head>
   <body>
     <section>
       <p>YouTube Subscribe Button</p>
       <button onclick="
         subscribe();
-      " class="js-subscribe-button">Subscribe</button>
+      " class="js-subscribe-button subscribe-button">Subscribe</button>
     </section>
 
     <section>
@@ -47,10 +71,12 @@
       function subscribe() {
         const buttonElement = document.querySelector('.js-subscribe-button');
 
-        if (buttonElement.innerHTML === 'Subscribe') {
+        if (buttonElement.innerText === 'Subscribe') {
           buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
         } else {
           buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
         }
       }
     </script>
