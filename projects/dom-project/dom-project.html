@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>DOM Project</title>
+     <link rel="stylesheet" href="dom.css">
+     <script src="dom.js"></script>
+  </head>
+  
+  <body>
+    <section>
+      <p>YouTube Subscribe Button</p>
+      <button onclick="
+        subscribe();
+      " class="js-subscribe-button subscribe-button">Subscribe</button>
+    </section>
+
+    <section>
+      <p>Rock Paper Scissors</p>
+      <a href="rock-paper-scissors.html">Click here</a>
+    </section>
+
+    <section>
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = +$10 shipping.</p>
+      <p>Orders over $40 = FREE shipping.</p>
+      <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="handleCostKey(event);">
+      <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+      <p class="js-total-cost"></p>
+    </section>
+  </body>
+</html>
+
+
