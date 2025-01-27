@@ -7,6 +7,7 @@ function handleCostKey(event) {
 function calculateTotal() {
   const inputElement = document.querySelector('.js-cost-input');
   let cost = Number(inputElement.value);
+  console.log(cost);
 
   if (cost < 40) {
     cost = cost + 10;
