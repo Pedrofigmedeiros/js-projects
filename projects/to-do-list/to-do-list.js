@@ -1,39 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const todoList = []; // Create the empty array
+const todoList = [{
+  name: 'make dinner',
+  dueDate: '20-12-2025'
+}, {
+  name: 'wash dishes',
+  dueDate: '12-02-2025'
+}];
 
-  renderTodoList(); // Render the initial (empty) todo list
+renderTodoList();
 
-  // Function to add a new todo item
-  function addTodo() {
-    const inputElement = document.querySelector('.js-name-input');
-    const todo = inputElement.value; // Get the text from the input
-    todoList.push(todo); // Add the new item to the array
-    console.log(todoList); // Display the updated array in the console
-    inputElement.value = ''; // Clear the input field
-
-    renderTodoList();
-  }
-
-  // Function to render the todo list items
-  function renderTodoList() {
-    let todoListHTML = '';
-
-    for (let i = 0; i < todoList.length; i++) {
-      const item = todoList[i];
-      todoListHTML += `<p>${item}</p>`;
-    }
-
-    document.querySelector('.js-todo-items').innerHTML = todoListHTML;
-  }
-
-  // Add event listener for the "Enter" key in the input field
+function addTodo(){
   const inputElement = document.querySelector('.js-name-input');
-  inputElement.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-      addTodo();
-    }
-  });
+  const name = inputElement.value; // get the text from the textbox
 
-  // Expose the `addTodo` function to the global scope
-  window.addTodo = addTodo;
-});
+  const dateInputElement = document.querySelector('.js-due-date-input');
+  const dueDate = dateInputElement.value;
+
+  todoList.push({
+    // name: name,
+    // dueDate: dueDate
+    name, 
+    dueDate
+  }); // add it to the arrays
+  inputElement.value = ''; // delete the text in the textbox
+
+  renderTodoList();
+}
+
+function renderTodoList(){
+  let todoListHTML = '';
+
+  for (let i = 0; i < todoList.length; i++) {
+    const todoObject = todoList[i];
+    // const name = todoObject.name;
+    // const dueDate = todoObject.dueDate;
+    const {name, dueDate} = todoObject;
+    const html = `
+    <div>${name}</div>
+    <div>${dueDate}</div>
+      <button onclick="
+        todoList.splice(${i}, 1);
+        renderTodoList();
+      " class="delete-button">Delete</button>
+    `;
+    todoListHTML += html;
+  }
+  console.log(todoListHTML);
+
+  document.querySelector('.js-todo-items').innerHTML = todoListHTML;
+}
