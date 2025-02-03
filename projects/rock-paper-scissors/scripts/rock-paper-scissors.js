@@ -14,10 +14,10 @@ let intervalId;
 
 function autoPlay() {
   if (isAutoPlaying === false) {
-    intervalId = setInterval(function(){
+    intervalId = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
-    }, 1000);
+    }, 500);
     isAutoPlaying = true;
   } else {
     clearInterval(intervalId);

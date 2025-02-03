@@ -4,7 +4,25 @@
     <title>Advanced Functions</title>
   </head>
   <body>
+    <button onclick="" class="js-button">Click</button>
+
     <script>
+      const buttonElement = document.querySelector('.js-button');
+
+      buttonElement.addEventListener('click', () => { // addEventListener 'click' works the same as the onclick atrribute but with some advantages
+        console.log('click');
+      });
+
+      const eventListener = () => {
+        console.log('click');
+      };
+
+      buttonElement.removeEventListener('click', eventListener);
+
+      buttonElement.addEventListener('click', () => {
+        console.log('click2');
+      });
+
       // function greeting() {
       //   console.log('hello');
       // }
@@ -52,17 +70,46 @@
       //   console.log('interval');
       // }, 3000);
 
-      [
-        'male dinner',
-        'wash dishes',
-        'watch youtube'
-      ].forEach(function(value, index){
-        if (value === 'wash dishes') {
-          return;
-        }
-        console.log(index);
-        console.log(value);
-      })
+      // [
+      //   'male dinner',
+      //   'wash dishes',
+      //   'watch youtube'
+      // ].forEach((value, index) => {
+      //   if (value === 'wash dishes') {
+      //     return;
+      //   }
+      //   console.log(index);
+      //   console.log(value);
+      // });
+
+      // const regularFunction = function(param, param2) {
+      //   console.log('hello');
+      //   return 5;
+      // }
+
+      // const arrowFunction = (param, param2) => {
+      //   console.log('hello');
+      //   return 5;
+      // };
+      // arrowFunction();
+
+      // const oneParam = param => { // com apenas um parametro podemos tirar o parenteses
+      //   console.log(param + 1);
+      // }
+      // oneParam(2);
+
+      // const oneLine = () => 2 + 3; // one line function
+      // console.log(oneLine());
+
+      // const object2 = {
+      //   method: () => {
+
+      //   },
+      //   method() { // shortcut for a function inside an object
+
+      //   }
+      // };
+
     </script>
   </body>
 </html>
