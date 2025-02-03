@@ -19,9 +19,11 @@ function autoPlay() {
       playGame(playerMove);
     }, 500);
     isAutoPlaying = true;
+    document.querySelector('.js-auto-button').innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    document.querySelector('.js-auto-button').innerHTML = 'Auto Play';
   }
 }
 
@@ -52,6 +54,10 @@ document.body.addEventListener('keydown', (event) => {
     playGame('paper')
   } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
 });
 
@@ -127,8 +133,29 @@ function pickComputerMove() {
 
 document.querySelector('.js-reset-button')
   .addEventListener('click', () => {
-    resetScore();
+    alertReset();
+    //resetScore();
   });
+
+function alertReset(){
+  const html = `
+    <p class="js-confirm-message">Are you sure you want to reset the score?</p>
+    <button class="js-yes-button">Yes</button>
+    <button class="js-no-button">No</button>
+    `;
+    document.querySelector('.js-confirmation-message').innerHTML = html;
+
+    document.querySelector('.js-yes-button')
+      .addEventListener('click', () => {
+        resetScore();
+        document.querySelector('.js-confirmation-message').innerHTML = '';
+      });
+    
+    document.querySelector('.js-no-button')
+      .addEventListener('click', () => {
+      document.querySelector('.js-confirmation-message').innerHTML = '';
+      });
+}
 
 function resetScore() {
   score.wins = 0;
@@ -139,3 +166,8 @@ function resetScore() {
 
   updateScoreElement();
 }
+
+// user press the button
+// computer displays a message and two buttons (confirm or deny)
+// if the person chooses confirm ---> reset the score
+// else ----> close the message
