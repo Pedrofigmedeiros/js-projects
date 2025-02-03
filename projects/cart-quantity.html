@@ -10,14 +10,27 @@
     <button onclick="addToCart(2)">+2</button>
     <button onclick="addToCart(3)">+3</button>
     <button onclick="resetCart()">Reset cart</button>
+    <p class="js-added"></p>
     <p class="js-cart-quantity"></p>
 
     <script>
       let cartQuantity = 0;
+      let addedMessageTimeout;
 
       function addToCart(amount) {
         cartQuantity += amount;
         showQuantity();
+
+        clearTimeout(addedMessageTimeout);
+
+        setTimeout(() => {
+          document.querySelector('.js-added').innerHTML = 'Added';
+
+          // Esconder "Added" 2 segundos depois de ter aparecido
+          addedMessageTimeout = setTimeout(() => {
+            document.querySelector('.js-added').innerHTML = '';
+          }, 2000);
+        }, 1000);
       }
 
       function resetCart() {
@@ -26,7 +39,9 @@
       }
 
       function showQuantity() {
-        document.querySelector('.js-cart-quantity').innerHTML = `Cart quantity: ${cartQuantity}`;
+        setTimeout(() => {
+          document.querySelector('.js-cart-quantity').innerHTML = `Cart quantity: ${cartQuantity}`;
+        }, 2000);
       }
     </script>
   </body>
